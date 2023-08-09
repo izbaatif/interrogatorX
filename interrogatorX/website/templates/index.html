@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title> InterrogatorX</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+        <style>
+            body{
+                background-color: rgb(196, 227, 246);
+                background-image: -webkit-linear-gradient(65deg, rgb(160, 160, 246) 10%, rgb(196, 227, 246) 80%, rgb(160, 160, 246) 10%);
+                min-height: 100px;
+            }
+
+            h1{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 80px;
+                text-align: center;
+                padding: 15px;
+            }
+
+            form{
+                margin-left: auto;
+                margin-right: auto;
+                padding:20px;
+            }
+
+            label{
+                font-size: 25px;
+            }
+
+            .button{
+                text-align: center;
+            }
+
+            .submitButton{
+                align-self: center;
+                background-color:rgb(149, 84, 239);
+                color: white;
+                border:0px;
+                border-radius: 10px;
+                font-size: 20px;
+                margin-top:20px;
+                text-align: center;
+                width:200px;
+                height:50px;
+            }
+
+            .submitButton:hover{
+                background-color:rgb(140, 71, 238);
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>InterrogatorX</h1>
+
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label>Headline:</label>
+                <input type="text" class="form-control" name="titleText" placeholder="Enter News Article Title" required>
+            </div>
+            <div class="form-group">
+                <label>Body:</label>
+                <textarea class="form-control" name="bodyText" rows="10" cols="30" required> </textarea>
+            </div>
+            <div class="form-group">
+                <label>Detection Method:</label>
+                <select name="method" class="form-control" >
+                    <option value="bagOfWords" selected> Bag of Words - Creates a set of popular words and checks if they appear in the given article and counts them </option>
+                    <option value="tfidf"> TfIdf Vectorization - A vector is created beforehand and the provided article compares its text against it </option>
+                    <option value="word2vec"> Word2vec - Word vector is created for each word and the text is checked with that</option>
+                </select>
+            </div>
+            <div class="button"> <button type="submit" class="submitButton" name="button"> Fake OR Fact? </button> </div>
+        </form>
+
+    </body>
+</html>
